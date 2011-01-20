@@ -1,0 +1,1 @@
+This is an attempt to implement http://simonstl.com/articles/cssFragID.html. Including this script (with jQuery) will result in the window scrolling to `http://example.com/#css(.class :nth-child(2))` or whatever jQuery selector you include within `#css()`.
