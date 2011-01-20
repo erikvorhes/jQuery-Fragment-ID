@@ -3,7 +3,7 @@
  * It will scroll to http://example.com/#css(.class :nth-child(2)) or whatever 
  * jQuery selector you include within "#css()".
  * Note: this will evolve very much. Right now it's pretty fragile!
- * By: Erik Vorhes (Thanks to Jeremy Khan for helping me think through this.)
+ * By: Erik Vorhes (Thanks to Jeremy Kahn for helping me think through this.)
  *
  */
 (function ($) {
