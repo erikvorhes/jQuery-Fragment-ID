@@ -22,14 +22,38 @@
 	<script type="text/javascript">
 	
 	$(function() {
-		$.gotoFrag({
+		$.gotoFrag.configHashchange({
+			'duration': 2500,
+			'complete': function (el) {
+				el.css({
+					'background' : '#ff8'
+				});
+			},
+			'onChangeTarget': function (oldEl, newEl) {
+				oldEl.css({
+					'background' : ''
+				});
+			}
+		});
+		
+		// Just some testing code.
+		/*setTimeout(function() {
+			window.location.hash = "#css(p:eq(2))"
+			
+			setTimeout(function() {
+				window.location.hash = "#css(p:eq(3))"
+			}, 3000);
+		}, 500);*/
+		
+		// This is also valid.  This is how you would call the plugin explicitly without relying on the hashchange event.
+		/*$.gotoFrag({
 			'duration': 2500,
 			'complete': function (el) {
 				el.css({
 					'background' : '#ff8'
 				})
 			}
-		});
+		});*/
 	});
 	
 	</script>
