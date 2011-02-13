@@ -90,6 +90,10 @@
 						}
 					}
 				});
+				
+				if (parseInt($(window).scrollTop(), 10) === parseInt(targetEl.offset().top, 10)) {
+					fakeEl.stop(true, true);
+				}
 			}
 
 		}
