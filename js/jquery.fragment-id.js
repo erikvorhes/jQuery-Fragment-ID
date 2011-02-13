@@ -39,44 +39,56 @@
  */
 (function ($) {
 	
-	$.gotoFrag = function gotoFrag (options) {
-		var hash = decodeURIComponent(window.location.hash).match(/^#css\((.+)\)$/i),
-			targetEl,
-			targetClass,
-			fakeEl;
-			
-		options = options || {};
-		targetClass = options.targetClassName || 'target';
-		
-		if (hash && hash[1]) {
-			targetEl = $(hash[1]).first();
-			
-			if (!!targetEl.length) {
-				
-				fakeEl = $('<div>');
-				fakeEl.css({
-					'width': document.body.scrollTop
-				}).animate({
-					'width': targetEl.offset().top
-				}, {
-					'duration': options.duration || 750,
-					'step': function () {
-						// You need to set the scrollTop property for both the body and documentElement
-						// for this to work cross-browser, SWEET
-						document.documentElement.scrollTop = document.body.scrollTop = fakeEl.css('width').replace(/px$/, '');
-					},
-					'complete': function () {
-						targetEl.addClass(targetClass);
-						
-						if (options.complete) {
-							options.complete(targetEl);
-						}
-					}
-				});
-			}
-			
-		}
-		return this;
+	var defaults = {
+		'duration': 1000
 	};
+
+    $.gotoFrag = function gotoFrag(options) {
+        var hash = decodeURIComponent(window.location.hash).match(/^#css\((.+)\)$/i),
+            targetEl, 
+			targetClass, 
+			fakeEl;
+
+		// Copy any options that were not defined in `options` from `defaults`.
+        options = $.extend( (options || {}), defaults);
+        targetClass = options.targetClassName || 'target';
+
+        if (hash && hash[1]) {
+            targetEl = $(hash[1]).first();
+
+            if ( !! targetEl.length) {
+
+                fakeEl = $('<div>');
+                fakeEl.css({
+                    'width': document.body.scrollTop
+                }).animate({
+                    'width': targetEl.offset().top
+                }, {
+                    'duration': options.duration || 750,
+                    'step': function () {
+                        // You need to set the scrollTop property for both the body and documentElement
+                        // for this to work cross-browser, SWEET
+                        document.documentElement.scrollTop = document.body.scrollTop = fakeEl.css('width').replace(/px$/, '');
+                    },
+                    'complete': function () {
+                        targetEl.addClass(targetClass);
+
+                        if (options.complete) {
+                            options.complete(targetEl);
+                        }
+                    }
+                });
+            }
+
+        }
+        return this;
+    };
+
+	// Detect to see if Ben Alman's jQuery Hashchange plugin is present.
+	if (!!$.fn.hashchange) {
+		$(window).hashchange(function (ev) {
+			$.gotoFrag();
+		});
+	}
 
 })(jQuery);
