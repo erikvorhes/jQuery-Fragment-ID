@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>test</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jeremy Kahn">
+	<!-- Date: 2011-01-21 -->
+	<style type="text/css">
+		p {
+			width: 400px;
+			margin: 20px auto;
+		}
+	</style>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fragment-id.js"></script>
+	
+	<script type="text/javascript">
+	
+	$(function() {
+		$.gotoFrag.configHashchange({
+			'duration': 2500,
+			'complete': function (el) {
+				el.css({
+					'background' : '#ff8'
+				});
+			},
+			'onChangeTarget': function (oldEl, newEl) {
+				oldEl.css({
+					'background' : ''
+				});
+			}
+		});
+		
+		// Just some testing code.
+		/*setTimeout(function() {
+			window.location.hash = "#css(p:eq(2))"
+			
+			setTimeout(function() {
+				window.location.hash = "#css(p:eq(3))"
+			}, 3000);
+		}, 500);*/
+		
+		// This is also valid.  This is how you would call the plugin explicitly without relying on the hashchange event.
+		/*$.gotoFrag({
+			'duration': 2500,
+			'complete': function (el) {
+				el.css({
+					'background' : '#ff8'
+				})
+			}
+		});*/
+	});
+	
+	</script>
+	
+</head>
+<body>
+	
+<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae vulputate tellus. Sed dictum dolor in neque pellentesque mollis. Proin mauris quam, tristique quis vulputate volutpat, accumsan in enim. Aenean suscipit mi in nisi mollis eget porttitor tortor ullamcorper. Pellentesque ullamcorper diam quis dolor rutrum fringilla. Praesent id arcu sollicitudin nisi consectetur hendrerit. Nulla laoreet odio quis nisl consequat consequat. Integer non ligula mollis justo accumsan cursus. Phasellus eleifend scelerisque turpis et rutrum. Praesent ligula nibh, auctor ut viverra nec, porta ut orci. Donec tempus gravida risus, quis auctor sem bibendum sed. Nunc ac magna eros. Nulla ullamcorper lectus magna, eget interdum tellus. Curabitur ac massa tristique sapien aliquam vulputate. Sed scelerisque egestas ipsum, non luctus lorem faucibus sit amet.</p>
+
+	<p>Mauris porta pharetra mauris, eget porttitor orci tincidunt eu. <span class="integer">Integer</span> interdum eros sed mauris mollis ut ultricies turpis fermentum. Duis tristique, sem vitae commodo vestibulum, ligula arcu semper dolor, quis tristique nibh lectus ac elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas et dui turpis. Curabitur ut nunc vitae est viverra fringilla. Donec nec diam id diam dignissim tincidunt. Curabitur consectetur metus pretium dolor tristique hendrerit eget ut eros. Mauris consectetur nisl diam, nec tempus turpis. Morbi rutrum commodo ligula, sed sodales sapien tincidunt iaculis. Vivamus gravida, est sed fringilla condimentum, augue leo adipiscing sem, eu sodales neque mauris ut odio. Aenean interdum tellus et arcu pharetra interdum.</p>
+
+	<p>Praesent hendrerit magna ac felis volutpat eu eleifend mi euismod. Nulla ut vulputate nisl. Cras sed dolor in orci malesuada volutpat. Maecenas aliquam orci id diam lobortis a varius lorem scelerisque. Nullam lacinia dictum elit, tincidunt pretium ipsum ullamcorper at. Quisque convallis sem eu tortor malesuada posuere. Suspendisse interdum mi ac tellus ullamcorper mattis. Aliquam sed libero eu libero iaculis accumsan volutpat non magna. Pellentesque vel libero non odio luctus vehicula. Praesent bibendum, lectus eget malesuada aliquet, mi mauris lacinia massa, ut tempor lorem elit a lorem. Fusce nec velit metus. Quisque posuere mollis adipiscing.</p>
+
+	<p>Nam eget odio quam. Donec auctor, arcu ut pellentesque auctor, orci felis volutpat est, ut feugiat enim purus ut ipsum. In ullamcorper sapien sed sem ultricies ac cursus dui molestie. Nam dapibus augue sit amet odio dictum dignissim. Vestibulum imperdiet, odio id molestie dignissim, sapien nibh aliquet erat, sed mollis tellus augue tincidunt ligula. Nullam congue diam tortor, <a href="#">sit</a> amet venenatis purus. Aenean posuere fringilla augue nec lacinia. Cras sit amet adipiscing lacus. Morbi lorem magna, cursus a elementum vel, auctor vel risus. Praesent vulputate aliquet libero in vulputate. Morbi commodo egestas metus, a suscipit nulla eleifend ut. Nunc sodales, tellus ut bibendum vehicula, diam lectus auctor urna, non ornare ligula quam at justo. Cras vestibulum volutpat laoreet.</p>
+
+	<p>Vestibulum eros tellus, pellentesque vitae laoreet vel, dignissim sed tortor. Phasellus pharetra interdum sapien, eu bibendum odio blandit vel. In in diam suscipit quam luctus pellentesque. Sed convallis purus in dui dignissim varius. Vestibulum eget sem eu est fermentum cursus. Aenean suscipit, nunc sit amet pretium cursus, orci justo commodo dui, sit amet lacinia ligula dui vitae est. Sed sed ante sapien, eget posuere nulla. Suspendisse pharetra consequat odio, at condimentum sapien vulputate quis. Sed aliquet facilisis nisi, tempor varius tortor rutrum eget. Duis sollicitudin mi id risus vulputate placerat.</p>
+	
+	<p>Praesent velit metus, dapibus ut tincidunt a, rutrum eu lectus. Nullam euismod arcu ac nisl sodales eget commodo quam dignissim. Morbi malesuada lorem vitae orci ultrices tristique. Etiam euismod, purus vel mollis semper, nunc massa eleifend nulla, ut cursus mi dui ac mi. Sed ipsum libero, molestie in pharetra nec, vehicula vitae mauris. Integer at libero ligula, eu tempus magna. Duis luctus eros mauris. Vestibulum sit amet erat quis elit posuere laoreet. Vivamus a nisi purus. Morbi eget velit mi. In id dictum odio. In ac dolor sed elit consequat ornare. Curabitur dapibus augue libero. Mauris ligula purus, interdum at rutrum vel, ullamcorper sit amet nunc. Ut a metus dui.</p>
+
+	<p>Phasellus sodales tempor ipsum a mattis. Fusce non sem enim, sed accumsan orci. Ut id felis odio. Integer sit amet ligula et tortor ultricies rutrum. Praesent facilisis ornare quam eget pulvinar. Duis metus neque, vehicula in dapibus non, dictum quis lacus. Sed iaculis turpis eget dui molestie vitae pulvinar diam elementum. Sed mollis lectus sed lorem luctus quis molestie neque aliquet. Aliquam sed nisl ligula. Integer a sapien est. Maecenas ullamcorper pretium risus vel vehicula. Maecenas bibendum, mauris et consectetur commodo, eros ipsum feugiat nisl, nec gravida felis sem nec arcu. Proin eu felis vitae ipsum ultrices luctus. In et dui lectus, et vehicula metus. Nullam at dui aliquam nisl sollicitudin imperdiet at sit amet sem. Nam volutpat suscipit scelerisque. In hac habitasse platea dictumst. Cras ornare blandit elit, sit amet aliquam enim interdum ac.</p>
+
+	<p>Sed molestie, dolor cursus pellentesque congue, nulla est tempor neque, et convallis purus augue adipiscing ipsum. Praesent quis sapien augue. Nam leo eros, varius nec posuere vehicula, laoreet et metus. Ut rhoncus mollis facilisis. Aenean euismod augue sed ipsum rutrum eu cursus diam lobortis. Curabitur tincidunt dolor vitae leo facilisis quis aliquam odio vulputate. Nunc <a href="#">placerat</a> adipiscing felis vel imperdiet. Cras non lectus et tortor porttitor ullamcorper. Nunc vel est nec ipsum malesuada lacinia. Pellentesque tempor, turpis eu euismod pharetra, velit ipsum pharetra leo, non varius est tellus id ligula. Aenean magna urna, euismod eget ornare convallis, ullamcorper congue orci. Vivamus iaculis mauris nec velit tempor cursus. Suspendisse pharetra elementum lectus eget consequat. Nullam non lacus sem.</p>
+
+	<p>Nunc pharetra risus quis velit dictum non pellentesque arcu tincidunt. Curabitur fermentum venenatis ullamcorper. Vivamus interdum interdum pharetra. Integer eu lobortis nisi. Quisque dapibus urna pretium nunc elementum convallis. Proin quam risus, posuere id mattis blandit, facilisis ac orci. Etiam luctus lobortis molestie. Suspendisse lacus lacus, porttitor vitae lacinia quis, ultricies iaculis nunc. Fusce vel ligula in nunc bibendum pharetra. Aliquam erat volutpat. Etiam et ligula id nunc feugiat pulvinar eget eget diam. Donec nec nisi ipsum. Donec adipiscing nibh nec risus dictum laoreet. Morbi euismod, arcu et molestie interdum, nibh mauris feugiat nulla, vulputate malesuada sapien urna in massa. Vivamus convallis, erat egestas sollicitudin consequat, enim dolor tincidunt est, vitae tincidunt turpis tortor in elit. Nulla bibendum, lorem vitae placerat bibendum, enim ante aliquet nisi, aliquet commodo metus justo quis magna.</p>
+
+	<p>Aliquam lacus dolor, aliquet eu luctus et, tempor a dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer auctor facilisis leo non sagittis. Donec placerat auctor arcu, vitae pulvinar ante ultrices facilisis. Nulla aliquam metus rhoncus enim pretium sollicitudin. Integer lorem eros, congue quis viverra sed, iaculis vitae nulla. Nullam non enim id libero scelerisque gravida. Sed adipiscing sem sit amet sem fringilla sit amet laoreet felis bibendum. Sed vehicula nulla vitae massa consequat dignissim. Proin vel eros mauris, vitae molestie purus. Mauris non mi id nunc venenatis hendrerit. Cras quis tellus arcu. In porta ultricies enim in convallis. In hac habitasse platea dictumst. Aliquam id metus risus, id blandit nibh. Cras et mattis sapien.</p>
+
+</body>
+</html>
